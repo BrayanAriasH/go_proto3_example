@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package openticket;
+
+
+option go_package = "github.com/braejan/go_proto3_example;openticketpb";
+
+message OpenTicket {
+    string supply = 1;
+    string unitPrice = 2;
+    bool minted = 3;
+}
+
+message GetOpenTicketRequest {
+  string id = 1;
+}
+
+message SetOpenTicketResponse {
+  string id = 1;
+}
+
+service OpenTicketService {
+  rpc GetOpenTicket(GetOpenTicketRequest) returns (OpenTicket);
+  rpc SetOpenTicket(OpenTicket) returns (SetOpenTicketResponse);
+}

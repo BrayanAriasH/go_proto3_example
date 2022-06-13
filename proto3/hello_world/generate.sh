@@ -1,1 +1,0 @@
-protoc --go_out=./cmd/app/hello --go-grpc_out=./cmd/app/hello  ./proto3/hello_world/hello_world.proto
